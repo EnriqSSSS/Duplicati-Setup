@@ -1,0 +1,24 @@
+[Unit]
+Description=Duplicati web-server
+After=network.target
+[Service]
+Nice=19
+IOSchedulingClass=idle
+EnvironmentFile=-/etc/default/duplicati
+ExecStart=/usr/bin/duplicati-server \
+$DUPLICATI_PORT \
+$DUPLICATI_HOSTS \
+$DUPLICATI_PASSWORD \
+$DUPLICATI_ENCRYPTION_KEY \
+$DUPLICATI_DB_ENCRYPTION \
+$DUPLICATI_INTERFACE \
+$DUPLICATI_LOG_LEVEL \
+$DUPLICATI_LOG_RETENTION \
+$DUPLICATI_DISABLE_TOKEN \
+$DUPLICATI_PORTABLE \
+$DUPLICATI_PING_PONG 
+Restart=always
+StandardOutput=append:/var/log/duplicati/duplicati.log
+StandardError=append:/var/log/duplicati/duplicati.err
+[Install]
+WantedBy=multi-user.target
