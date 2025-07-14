@@ -40,13 +40,22 @@ Este repositório contém:
 
 2. **Criar diretório de scripts**  
    ```bash
-   sudo mkdir -p /root/duplicati-scripts
-   sudo cp -r ./duplicati-scripts/* /root/duplicati-scripts/
+   sudo cp -r ./Duplicati-Setup/duplicati-scripts/ /root/duplicati-scripts/
+   sudo cp -r ./Duplicati-Setup/templates/<template> /root/duplicati-scripts/<template> # OPTIONAL
    sudo chmod -R 775 /root/duplicati-scripts/
-   sudo chown -R root:root /root/duplicati-scripts/
+   sudo chown -R root:sudo /root/duplicati-scripts/
    ```
 
-3. **Habilitar e iniciar o serviço**  
+3. **Configure as variáveis**  
+   ```bash
+      nano /etc/default/duplicati
+      ## Duplicati não vai funcionar sem configurar corretamente estas variáveis ##
+      # DUPLICATI_HOSTS
+      # DUPLICATI_PASSWORD
+      # DUPLICATI_ENCRYPTION_KEY
+   ```
+
+4. **Habilitar e iniciar o serviço**  
    ```bash
    sudo systemctl daemon-reload
    sudo systemctl enable duplicati
