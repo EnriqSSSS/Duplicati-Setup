@@ -18,7 +18,5 @@ $DUPLICATI_DISABLE_TOKEN \
 $DUPLICATI_PORTABLE \
 $DUPLICATI_PING_PONG 
 Restart=always
-StandardOutput=append:/var/log/duplicati/duplicati.log
-StandardError=append:/var/log/duplicati/duplicati.err
 [Install]
 WantedBy=multi-user.target
