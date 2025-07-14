@@ -43,7 +43,7 @@ Este repositório contém:
    sudo mkdir -p /root/duplicati-scripts
    sudo cp -r ./duplicati-scripts/* /root/duplicati-scripts/
    sudo chmod -R 775 /root/duplicati-scripts/
-   sudo chown -R root:sudo /root/duplicati-scripts/
+   sudo chown -R root:root /root/duplicati-scripts/
    ```
 
 3. **Habilitar e iniciar o serviço**  
